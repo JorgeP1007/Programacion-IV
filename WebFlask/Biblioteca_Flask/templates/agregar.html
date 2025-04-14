@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Libro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h1>Agregar Nuevo Libro</h1>
+    <form method="post">
+        <div class="mb-3">
+            <label>Título</label>
+            <input name="titulo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Autor</label>
+            <input name="autor" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Género</label>
+            <input name="genero" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Estado (leído / no leído)</label>
+            <input name="estado" class="form-control" required>
+        </div>
+        <button class="btn btn-success">Guardar</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver</a>
+    </form>
+</body>
+</html>
