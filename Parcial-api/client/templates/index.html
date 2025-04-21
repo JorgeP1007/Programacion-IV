@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Vacunación Sarampión - Panamá</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Vacunación contra el Sarampión en Panamá</h1>
+    <form method="get">
+        <input type="text" name="region" placeholder="Buscar por región">
+        <input type="text" name="year" placeholder="Buscar por año">
+        <button type="submit">Buscar</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Año</th>
+                <th>Región</th>
+                <th>Cobertura (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in data %}
+            <tr>
+                <td>{{ entry.year }}</td>
+                <td>{{ entry.region }}</td>
+                <td>{{ entry.coverage }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
